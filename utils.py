@@ -110,8 +110,9 @@ async def send_new_order_to_info_channels(bot: Bot, user_id: int):
             InlineKeyboardButton(text="❌", callback_data=f"new_order_action-no#{order_info['order_id']},{order_info['telegram_user_id']}"),
         ]
     ])
-    for info_channel in info_channels:
+    for info_channel in info_channels.keys():
         await bot.send_message(chat_id=info_channel,
+                               message_thread_id=info_channels[info_channel][order_info['sending_city']],
                                text=f"Заказчик: {user_link(chat)}\n"
                                     f"1. Город отправки: {order_info['sending_city']}\n"
                                     f"2. Город доставки: {order_info['delivery_city']}\n"

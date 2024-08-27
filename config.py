@@ -6,6 +6,9 @@ passwd="1"
 dbase="postgres"
 host="127.0.0.1"
 
-info_channels = [
-    -4513621710
-]
+info_channels = {
+    -1002229087174 : {
+        "Москва и МО": 326,
+        "Казань": 328
+    }
+}

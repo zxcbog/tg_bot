@@ -146,7 +146,7 @@ async def make_offer(message : Message, state : FSMContext):
     await state.update_data(delivery_count=result)
     message_history = await state.get_data()
     message_id_bot = message_history.get('prev_bot_message')
-    await update_state(f"Введите общий вес посылки(кг):",
+    await update_state(f"Введите общий вес поставки(кг):",
                        message.bot,
                        state.key.chat_id,
                        message.message_id,
