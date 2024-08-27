@@ -5,3 +5,7 @@ user="postgres"
 passwd="1"
 dbase="postgres"
 host="127.0.0.1"
+
+info_channels = [
+    -4513621710
+]

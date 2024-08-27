@@ -6,9 +6,12 @@ from aiogram.enums import ParseMode
 from config import BOT_TOKEN
 from utils import *
 import routers
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from aiogram.fsm.storage.mongo import MongoStorage
 
-
-dp = Dispatcher()
+storage = MongoStorage(m_db)
+dp = Dispatcher(storage=storage)
+scheduler = AsyncIOScheduler()
 
 
 async def main() -> None:
